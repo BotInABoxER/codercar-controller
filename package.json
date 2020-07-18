@@ -7,8 +7,11 @@
   "scripts": {
     "dev": "nuxt --port 1234",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "nuxt start --port 5678",
     "generate": "nuxt generate",
+    "tauri:source": "yarn tauri",
+    "tauri:dev": "yarn tauri:source dev",
+    "tauri:build": "yarn tauri:source build",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "lint-staged": {
