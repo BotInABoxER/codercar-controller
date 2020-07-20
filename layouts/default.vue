@@ -10,9 +10,7 @@
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
-          :to="item.to"
-          router
-          exact
+          @click="item.onClick"
         >
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -31,9 +29,10 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
     </v-app-bar>
-    <v-content class="grey">
+    <SetupModal :show="showSetupModal" @close="showSetupModal = false" />
+    <v-main class="grey">
       <nuxt />
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
@@ -42,16 +41,12 @@ export default {
   data () {
     return {
       drawer: false,
+      showSetupModal: false,
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          title: 'Setup',
+          onClick: () => { this.showSetupModal = true }
         }
       ],
       title: 'CodeRcar'

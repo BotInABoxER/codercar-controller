@@ -20,7 +20,9 @@ module.exports = {
     "object-shorthand": ["error", "always"],
     "import/order": "off",
     "vue/require-default-prop": 0,
-    "vue/no-v-html": 0 // Technically not super safe, but the only place it's used is for the blog page, so... 
+    "vue/singleline-html-element-content-newline": 0,
+    "indent": [1, 2],
+    "vue/no-v-html": 0
   },
   "ignorePatterns": []
 }

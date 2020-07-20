@@ -49,6 +49,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],
+  // https://nuxtjs.org/api/configuration-components/
+  components: true,
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
@@ -85,5 +87,9 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+
+  router: {
+    middleware: 'tauri'
   }
 }
